@@ -9,17 +9,29 @@
   </head>
   <body>
     <div class="container">
-      <div id="project1">  <!-- Word Puzzle -->
+      <div class="row">  <!-- Word Puzzle -->
         <h1>Project: Word Puzzle</h1>
         <h3>Guess the puzzle phrase</h3>
         <p id="input">Believe you can and you are halfway there. Theodore Roosevelt</p>
         <p id="result"></p>
         <button class="btn btn-success col-sm-4" id="puzzle">Puzzle</button>
         <button class="btn btn-danger col-sm-2" id="answer">Answer</button>
-      </div>
-<!-- End Word Puzzle -->
-
-
+      </div>    <!-- End Word Puzzle -->
+      <hr>
+      <div class="row">  <!-- Factorial -->
+        <h1>Project: Factorial:</h1>
+        <div id="factorial">
+          <form>
+            <div class="row">
+              <div class="form-group col-sm-4">
+                <label for="number">Input Number</label>
+                <input id="number" class="form-control" type="text">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success">Calculate the factorial</button>
+          </form>
+        </div>
+      </div>  <!-- End Factorial -->
 
     </div>
   </body>
