@@ -18,7 +18,7 @@ $(document).ready(function() {
 // End Word Puzzle ----------
 // Start Factorial ----------
   $("#factorial form").submit(function(event) {
-    var inputNum = $("input#number").val();
+    var inputNum = $("input#input1").val();
     var resultNum = inputNum;
 
     for (var index = 1; index < inputNum; index += 1) {
@@ -54,5 +54,29 @@ $(document).ready(function() {
     event.preventDefault();
   });
 // End Palindrome ----------
+// Start Prime Number ----------
+  $("#prime form").submit(function(event) {
+    var inputNum2 = $("input#input2").val();
+    var arrayNum = [];
+//     var primeControl = [2, 3, 5, 7];
+// console.log(inputNum2)
+//     inputNum2 = parseInt(inputNum2);
+//
+//     primeControl.forEach(function(firstCheck) {
+//       if (firstCheck === inputNum2) {
+//         arrayNum.push(firstCheck)
+//       }
+//       else {
+//
+//       }
+//     });
 
+    for (var index = 2; index <= inputNum2; index += 1) {
+      arrayNum.push(index);
+    }
+console.log(arrayNum)
+
+    event.preventDefault();
+  });
+// End Prime Number ----------
 });
