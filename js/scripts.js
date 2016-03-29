@@ -29,4 +29,30 @@ $(document).ready(function() {
 
     event.preventDefault();
   });
+// End Factorial ----------
+// Start Palindrome ----------
+  $("#palindrome form").submit(function(event) {
+    var inputWord = $("input#word").val();
+    var delCharacters = [" ", ".", ",", "?", "!", ";", "(", ")"];
+
+    for(var index = 0; index < inputWord.length; index += 1) {
+      delCharacters.forEach(function(checkCharacter) {
+        inputWord = inputWord.replace(checkCharacter, "");
+      });
+    };
+
+    inputWord = inputWord.toLowerCase();
+
+    var reverseWord = inputWord.split("").reverse().join("");
+
+    if (reverseWord === inputWord) {
+      $("#palindrome-result").text("This is a palindrome.");
+    } else {
+      $("#palindrome-result").text("Nice try, but this is not a palindrome.");
+    }
+
+    event.preventDefault();
+  });
+// End Palindrome ----------
+
 });
