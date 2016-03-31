@@ -18,7 +18,7 @@ $(document).ready(function() {
 // End Word Puzzle ----------
 // Start Factorial ----------
   $("#factorial form").submit(function(event) {
-    var inputNum = $("input#input1").val();
+    var inputNum = parseInt($("input#input1").val());
     var resultNum = inputNum;
 
     for (var index = 1; index < inputNum; index += 1) {
@@ -56,26 +56,23 @@ $(document).ready(function() {
 // End Palindrome ----------
 // Start Prime Number ----------
   $("#prime form").submit(function(event) {
-    var inputNum2 = $("input#input2").val();
+    var inputNum2 = parseInt($("input#input2").val());
     var arrayNum = [];
-//     var primeControl = [2, 3, 5, 7];
-// console.log(inputNum2)
-//     inputNum2 = parseInt(inputNum2);
-//
-//     primeControl.forEach(function(firstCheck) {
-//       if (firstCheck === inputNum2) {
-//         arrayNum.push(firstCheck)
-//       }
-//       else {
-//
-//       }
-//     });
 
-    for (var index = 2; index <= inputNum2; index += 1) {
-      arrayNum.push(index);
+    if (inputNum2 >=2 && inputNum2 <=100) {
+    	for (var index = 2; index <= inputNum2; index += 1) {
+        if (index === 2 || index === 3 || index === 5 || index === 7) {
+        	arrayNum.push(index);
+        }
+        else if ((index%2) !== 0 && (index%3) !== 0 && (index%5) !== 0 && (index%7) !== 0){
+        	arrayNum.push(index);
+        }
+      }
     }
-console.log(arrayNum)
-
+    else {
+    alert("Try Again")
+    }
+    $("#prime-result").text(arrayNum);
     event.preventDefault();
   });
 // End Prime Number ----------
